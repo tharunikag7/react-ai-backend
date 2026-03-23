@@ -32,6 +32,7 @@ app.post("/generate", async (req, res) => {
   }
 
   try {
+    console.log("ENV CHECK:", process.env.GROQ_API_KEY);
     const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
       method: "POST",
       headers: {
