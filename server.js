@@ -25,7 +25,7 @@ app.use(express.json());
 // ✅ API Route
 app.post("/generate", async (req, res) => {
   const { prompt } = req.body;
-
+  console.log("KEY VALUE:", process.env.GROQ_API_KEY);
   // ✅ validation
   if (!prompt || prompt.length > 1000) {
     return res.status(400).json({ error: "Invalid prompt" });
